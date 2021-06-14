@@ -107,7 +107,9 @@ function keyPressed() {
   stoneBodyPosition=lstone.body.position
   
   var distance=dist(stoneBodyPosition.x, stoneBodyPosition.y, mangoBodyPosition.x, mangoBodyPosition.y)
-  
+  {
+   Matter.Body.setStatic(lmango.body,false);
+    }
   
 
   }
