@@ -45,8 +45,8 @@ function setup() {
 function draw() {
 
   background(230);
-
-  textSize(30);
+ 
+  textSize(25);
   text("Press Space to get a second Chance to Play!!",50 ,50);
   image(boy ,200,340,200,300);
   //Engine.update(engine)
@@ -91,7 +91,7 @@ function mouseDragged()
 function mouseReleased()
 {
 	launcherObject.fly();
-   
+    
 }
 
 function keyPressed() {
@@ -107,9 +107,11 @@ function keyPressed() {
   stoneBodyPosition=lstone.body.position
   
   var distance=dist(stoneBodyPosition.x, stoneBodyPosition.y, mangoBodyPosition.x, mangoBodyPosition.y)
-  {
-   Matter.Body.setStatic(lmango.body,false);
+ 
+  	if(distance<=lmango.r+lstone.r)
+    {
+     
+  	  Matter.Body.setStatic(lmango.body,false);
     }
-  
 
   }
